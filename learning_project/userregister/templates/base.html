@@ -1,0 +1,23 @@
+<!DOCTYPE html5>
+<html lang="en">
+    <head>
+        <title>{% block title %}base{% endblock %}</title>
+    </head>
+    <body>
+        <h1>{% block heading %}heading{% endblock %}</h1>
+    
+        <br><br>
+
+        <hr>
+
+        <br><br>
+
+        {% block content %}
+        
+        content
+        
+        {% endblock %}
+    
+    </body>
+
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}New Post{% endblock %}
+{% block heading %}Create New Post Here{% endblock %}
+{% block content %}
+    <div class='content-section'>
+        <form action='/post' method='GET'>
+            <fieldset class="form-group">
+                <legend>New Post</legend>
+                <label for="ign">Discord name: </label><br>
+                <input type="text" id="ign" name="ign" required><br>
+                <label for="role">Enter the name of role you want: </label><br>
+                <input type="text" id="role" name="role" required><br>
+                <label for="content">Tell Us About You</label><br>
+                <textarea name="content" maxlength="400" wrap="soft" rows="10" cols="50" required></textarea>
+                <pre>
+                    the roles available are:
+                        1. Ninja
+                        2. Cs go Player
+                        3. R6 Player
+                        4. Rust Player
+                </pre>
+                <input type="submit" value="OK!">
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

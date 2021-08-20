@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="registe-page">
+    {% if messages %}
+            {% for message in messages %}
+            <div class = "alert alert-error">
+                {{ message }}
+            </div>
+            {% endfor %}
+    {% endif %}
+    <form method="post">
+    <div class="form">
+        {% csrf_token %}
+        <form class="login-form">
+            <input type="text" name="username" placeholder="username" required/>
+            <input type="text" name="email" placeholder="email address" required/>
+            <a href="#" style="float:right;font-size:12px;">Forgot Password?</a>
+            <input type="password" name="password" placeholder="password" required/>
+            <button>Register</button>
+            <p class="message">Already registered? <a href="{% url 'login_attempt' %}">Login</a></p>
+        </form>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}

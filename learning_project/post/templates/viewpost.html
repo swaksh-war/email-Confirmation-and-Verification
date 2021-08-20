@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}View Post{% endblock %}
+{% block heading %}View Post Here{% endblock %}
+{% block content %}
+{% for p in post %}
+    <h1>{{p.ign}}</h1>
+    <p>{{p.role}}and{{p.content}}</p>
+    <form action="/post/delete" method="GET">
+        
+        <input type="hidden" value="{{p.id}}" name="id">
+        <input type="submit" value="delete">
+
+    </form>
+    <form action="/post/update" method="GET">
+        <input type="hidden" value="{{p.id}}" name="id">
+        <input type="submit" value="update">
+    </form>
+{% endfor %}
+{% endblock %}

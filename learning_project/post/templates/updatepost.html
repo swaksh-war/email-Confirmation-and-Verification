@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Update Post{% endblock %}
+{% block heading %}Update Post Here{% endblock %}
+{% block content %}
+    <div class='content-section'>
+        
+        <form action='/post/update/successtext' method='GET'>
+            <fieldset class="form-group">
+                <legend>Update Post</legend>
+                <label for="ign">Update Discord name: </label><br>
+                <input type="text" id="ign" name="ign" value="{{ign}}"><br>
+                <label for="role">Update the role you want: </label><br>
+                <input type="text" id="role" name="role" value="{{role}}" ><br>
+                <label for="content">Update About You</label><br>
+                <textarea name="content" maxlength="400" wrap="soft" rows="10" cols="50" placeholder="{{content}}"></textarea>
+                <p>{{content}}</p>
+                <input type="hidden" value="{{id}}" name="id">
+                <pre>
+                    Update YOUR DATA
+                </pre>
+                <input type="submit" value="Update">
+            </fieldset>
+        </form>
+        
+    </div>
+{% endblock %}

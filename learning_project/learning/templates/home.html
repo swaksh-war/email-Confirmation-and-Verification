@@ -1,0 +1,34 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <title>UGA Home</title>
+    <h1>Welcome To Ultimate Gaming Arena</h1>
+</head>
+<body>
+    {% if message %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}">
+        {{message}}
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    <a href="/learning/about">About</a>
+    <a href="/learning/home">home</a>
+    <a href="/post/newpost">new post</a>
+    <a href="/post/view">ViewPost</a>
+    {% for user in users %}
+        <h1>{{user.name}}</h1>
+        <p>has a role of {{user.role}} and is {{user.game}}</p>
+    {% endfor %}
+    <a href="/datacenter"></a>
+    <br><br>
+    {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'logout' %}">Log Out</a>
+    {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'User-Register' %}">Register</a>
+    {% endif %}
+</body>
+</html>
